@@ -1,11 +1,18 @@
 <template>
-    <div>
-        <h2 class="text-4xl">My Core Values</h2>
-        <div>
-            <h4 class="text-2xl p-5">Leadership</h4>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat quod corporis, tempora aut dolorem doloribus earum fuga eum asperiores officia nesciunt nobis, perferendis dignissimos cumque quos neque adipisci enim placeat.</p>
-            <h4 class="text-2xl p-5">Compassion</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit delectus repellendus iste? Amet ratione, corporis architecto ipsam, obcaecati eaque reiciendis natus magnam, sapiente illum commodi non? Similique quam quos repudiandae.</p>
-        </div>
+    <div class="bg-white">
+        <main class="mx-auto pl-4 pr-8 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold tracking-tight text-warm-gray-900 sm:text-5xl lg:text-5xl pb-5">Who am I?</h2>
+            <div class="grid grid-cols-12">
+                <div class="col-span-6">
+                    <ul class="text-4xl list-disc pl-10 space-y-5">
+                        <li>Public Speaker</li>
+                        <li>Software Developer</li>
+                        <li>Team Leader</li>
+                        <li>Technology Consultant</li>
+                    </ul>
+                </div>
+                <video class="col-span-6 w-full h-auto " role="application" preload="metadata" autoplay="autoplay" muted="muted" loop src="/storage/tom_talk.mp4"></video>
+            </div>
+        </main>
     </div>
 </template>
