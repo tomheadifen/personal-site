@@ -36,7 +36,6 @@
                         </span>
                     </a>
               </div>
-                <!-- <path d="M85 408a3 3 0 100-6 3 3 0 000 6z" fill="#B4B8BC" /> -->
             </div>
         </section>
         <my-values class="mb-10" />
