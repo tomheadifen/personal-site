@@ -18,4 +18,18 @@ class HomeController extends Controller
 
         return Inertia::render('Home', ['stackOverFlowData' => $stackOverFlowData]);
     }
+
+    public function sendMessage(Request $request)
+    {
+        $request->validate([
+            'firstName' => 'required|max:500',
+            'lastName' => 'required|max:500',
+            'email' => 'required|max:500',
+            'phone' => 'required',
+            'subject' => 'required|max:500',
+            'message' => 'required|max:500',
+        ]);
+
+        dd($request->all());
+    }
 }

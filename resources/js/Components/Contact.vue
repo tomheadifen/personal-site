@@ -179,8 +179,7 @@
                             <div class="sm:px-10 lg:col-span-4 xl:pr-12 xl:pl-12">
                                 <h3 class="text-lg font-medium text-warm-gray-900">Send me a message</h3>
                                 <form
-                                    action="send_message"
-                                    method="POST"
+                                    @submit.prevent="submitForm"
                                     class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
                                 >
                                     <div>
@@ -190,6 +189,7 @@
                                         >First name</label>
                                         <div class="mt-1">
                                             <input
+                                                v-model="form.firstName"
                                                 type="text"
                                                 name="first-name"
                                                 id="first-name"
@@ -197,6 +197,7 @@
                                                 class="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
                                             />
                                         </div>
+                                        <div class="text-red-400 pt-3" v-if="form.errors.firstName">{{ form.errors.firstName }}</div>
                                     </div>
                                     <div>
                                         <label
@@ -205,6 +206,7 @@
                                         >Last name</label>
                                         <div class="mt-1">
                                             <input
+                                                v-model="form.lastName"
                                                 type="text"
                                                 name="last-name"
                                                 id="last-name"
@@ -212,6 +214,7 @@
                                                 class="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
                                             />
                                         </div>
+                                        <div class="text-red-400 pt-3" v-if="form.errors.lastName">{{ form.errors.lastName }}</div>
                                     </div>
                                     <div>
                                         <label
@@ -220,6 +223,7 @@
                                         >Email</label>
                                         <div class="mt-1">
                                             <input
+                                                v-model="form.email"
                                                 id="email"
                                                 name="email"
                                                 type="email"
@@ -227,6 +231,7 @@
                                                 class="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
                                             />
                                         </div>
+                                        <div class="text-red-400 pt-3" v-if="form.errors.email">{{ form.errors.email }}</div>
                                     </div>
                                     <div>
                                         <div class="flex justify-between">
@@ -241,6 +246,7 @@
                                         </div>
                                         <div class="mt-1">
                                             <input
+                                                v-model="form.phone"
                                                 type="text"
                                                 name="phone"
                                                 id="phone"
@@ -249,6 +255,7 @@
                                                 aria-describedby="phone-optional"
                                             />
                                         </div>
+                                        <div class="text-red-400 pt-3" v-if="form.errors.phone">{{ form.errors.phone }}</div>
                                     </div>
                                     <div class="sm:col-span-2">
                                         <label
@@ -257,12 +264,14 @@
                                         >Subject</label>
                                         <div class="mt-1">
                                             <input
+                                                v-model="form.subject"
                                                 type="text"
                                                 name="subject"
                                                 id="subject"
                                                 class="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
                                             />
                                         </div>
+                                        <div class="text-red-400 pt-3" v-if="form.errors.subject">{{ form.errors.subject }}</div>
                                     </div>
                                     <div class="sm:col-span-2">
                                         <div class="flex justify-between">
@@ -277,6 +286,7 @@
                                         </div>
                                         <div class="mt-1">
                                             <textarea
+                                                v-model="form.message"
                                                 id="message"
                                                 name="message"
                                                 rows="4"
@@ -284,6 +294,7 @@
                                                 aria-describedby="message-max"
                                             />
                                         </div>
+                                        <div class="text-red-400 pt-3" v-if="form.errors.message">{{ form.errors.message }}</div>
                                     </div>
                                     <!-- Capture -->
                                     <vue-recaptcha class="col-span-2 flex justify-end" @verify="enableSubmitButton" @error="errorCaptcha" :sitekey="'6LeBuBweAAAAAKtS6OlH33B9PiH2RH6GV4lWtf-8'"></vue-recaptcha>
@@ -307,10 +318,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { VueRecaptcha } from 'vue-recaptcha';
+import { ref } from 'vue'
+import { VueRecaptcha } from 'vue-recaptcha'
+import { useForm } from '@inertiajs/inertia-vue3'
+import { useToast } from "vue-toastification"
 
-const isDisabled = ref(true)
+const toast = useToast()
+
+const isDisabled = ref(false)
 
 const enableSubmitButton = () => {
     isDisabled.value = false
@@ -318,5 +333,23 @@ const enableSubmitButton = () => {
 
 const errorCaptcha = () => {
     console.log('Robot detected')
+}
+
+const form = useForm({
+    firstName: null,
+    lastName: null,
+    email: null,
+    phone: null,
+    subject: null,
+    message: null,
+})
+
+const submitForm = () => {
+    form.post('/send-message', {
+        preserveScroll: true,
+        onSuccess: () => {
+            toast.success('Message Sent!')
+        },
+    })
 }
 </script>
