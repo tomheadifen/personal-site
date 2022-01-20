@@ -304,7 +304,7 @@
                                         <button
                                             type="submit"
                                             class="disabled:bg-indigo-200 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                            :disabled="isDisabled"
+                                            :disabled="isDisabled || form.processing"
                                         >Submit</button>
                                     </div>
                                 </form>
@@ -325,7 +325,7 @@ import { useToast } from "vue-toastification"
 
 const toast = useToast()
 
-const isDisabled = ref(false)
+const isDisabled = ref(true)
 
 const enableSubmitButton = () => {
     isDisabled.value = false
@@ -348,7 +348,11 @@ const submitForm = () => {
     form.post('/send-message', {
         preserveScroll: true,
         onSuccess: () => {
-            toast.success('Message Sent!')
+            toast.success('Message Sent! I\'ll respond as soon as I can :)')
+            form.reset()
+        },
+        onError: () => {
+            toast.error('Oops, something went wrong. Check for any validation errors.')
         },
     })
 }

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
+use App\Mail\ContactForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
@@ -25,11 +27,13 @@ class HomeController extends Controller
             'firstName' => 'required|max:500',
             'lastName' => 'required|max:500',
             'email' => 'required|max:500',
-            'phone' => 'required',
+            'phone' => 'numeric|digits_between:7,15',
             'subject' => 'required|max:500',
             'message' => 'required|max:500',
         ]);
 
-        dd($request->all());
+        Mail::to(config('mail.contact_form_to_address'))->send(new ContactForm($request->all()));
+
+        return redirect('/');
     }
 }
