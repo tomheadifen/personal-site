@@ -1,6 +1,6 @@
 <template>
     <section class="relative mx-auto pl-4 pr-8 sm:px-6 lg:px-8" aria-labelledby="contact-heading">
-        <div class="grid grid-cols-4 mb-10">
+        <div id="about" class="grid grid-cols-4 mb-10">
             <div class="lg:col-span-2 col-span-4">
                 <div class="grid grid-cols-4">
                     <img src="/storage/profile_picture.jpg" class="w-full col-span-3" alt="Tom Headifen Profile Picture">
@@ -8,8 +8,11 @@
             </div>
             <!-- Order last on smaller screens -->
             <div class="lg:order-last order-first col-span-2">
-                <p class="text-8xl font-extrabold text-gray-900 lg:mb-5">Thomas Headifen</p>
-                <p class="text-6xl text-gray-900 lg:mb-5">Software Developer</p>
+                <p class="text-8xl font-extrabold text-gray-900 lg:mb-5">Tom Headifen</p>
+                <!-- <p class="text-6xl text-gray-900 lg:mb-5">Software Developer</p> -->
+                <p class="text-3xl text-gray-900 lg:mb-5">
+                    A Toronto based software developer    
+                </p>
                 <div class="pb-5">
                     <img class="inline mr-2" height="25" width="25" :src="stackOverFlowData.items[0].profile_image" />
                     <a href="https://stackoverflow.com/users/4371791/tom-headifen">

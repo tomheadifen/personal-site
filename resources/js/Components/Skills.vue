@@ -5,27 +5,22 @@
         <div class="bg-white shadow overflow-hidden sm:rounded-md">
             <ul role="list" class="divide-y divide-gray-200">
                 <li v-for="skill in skills" :key="skill.id">
-                    <a href="#" class="block hover:bg-gray-50">
-                        <div class="px-4 py-4 flex items-center sm:px-6">
-                            <div class="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
-                                <div class="truncate">
-                                    <div class="flex text-sm">
-                                        <p
-                                            class="font-medium text-indigo-600 truncate"
-                                        >{{ skill.title }}</p>
-                                    </div>
-                                    <div class="mt-2 flex">
-                                        <div class="flex items-center text-sm text-gray-500">
-                                            <p>{{ skill.description }}</p>
-                                        </div>
+                    <div class="px-4 py-4 flex items-center sm:px-6">
+                        <div class="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
+                            <div class="truncate">
+                                <div class="flex text-sm">
+                                    <p
+                                        class="font-medium text-indigo-600 truncate"
+                                    >{{ skill.title }}</p>
+                                </div>
+                                <div class="mt-2 flex">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <p>{{ skill.description }}</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="ml-5 flex-shrink-0">
-                                <ChevronRightIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
-                            </div>
                         </div>
-                    </a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -33,8 +28,6 @@
 </template>
 
 <script setup>
-import { ChevronRightIcon } from '@heroicons/vue/solid'
-
 const skills = [
     {
         id: 1,
@@ -43,23 +36,38 @@ const skills = [
     },
     {
         id: 2,
+        title: 'Laravel',
+        description: 'A server side PHP framework to quickly develop web software',
+    },
+    {
+        id: 3,
         title: 'Javascript',
         description: 'A programming language used by your browsers such as chrome and edge',
     },
     {
-        id: 3,
+        id: 4,
+        title: 'Vue',
+        description: 'A javascript library to easily develop the front end',
+    },
+    {
+        id: 5,
         title: 'MySQL',
         description: 'A database language used to manage large amounts of data',
     },
     {
-        id: 4,
+        id: 6,
         title: 'Linux',
         description: 'Software used by many computers on the web',
     },
     {
-        id: 5,
-        title: 'Amazon Web Services (AWS)',
-        description: 'A range of software that is common on the web.',
+        id: 7,
+        title: 'Amazon Web Services (AWS) and Google Firebase',
+        description: 'A range of software that is commonly used on the web',
+    },
+    {
+        id: 8,
+        title: 'Docker',
+        description: 'Software to easily maintain and replicate server configuration',
     },
 ]
 </script>

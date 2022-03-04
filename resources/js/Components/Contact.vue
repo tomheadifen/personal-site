@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white">
+    <div id="contact" class="bg-white">
         <main class="overflow-hidden">
             <!-- Header -->
             <div class="bg-warm-gray-50">

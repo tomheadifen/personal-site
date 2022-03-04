@@ -6,6 +6,7 @@ import { InertiaProgress } from '@inertiajs/progress';
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
 import Layout from './Layouts/AppLayout'
+import VueSmoothScroll from 'vue3-smooth-scroll'
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
@@ -20,6 +21,7 @@ createInertiaApp({
 	createApp({ render: () => h(App, props) })
 		.use(plugin)
 		.use(Toast)
+		.use(VueSmoothScroll)
 		.mount(el)
 	},
 })
