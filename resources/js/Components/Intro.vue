@@ -3,7 +3,7 @@
         <div id="about" class="grid grid-cols-4 mb-10">
             <div class="lg:col-span-2 col-span-4">
                 <div class="grid grid-cols-4">
-                    <img src="/storage/profile_picture.jpg" class="w-full col-span-3" alt="Tom Headifen Profile Picture">
+                    <img src="/storage/profile_picture_tom_headifen.webp" class="w-full col-span-3" alt="Tom Headifen Profile Picture">
                 </div>
             </div>
             <!-- Order last on smaller screens -->
