@@ -3,13 +3,13 @@
         <div id="about" class="grid grid-cols-4 mb-10">
             <div class="lg:col-span-2 col-span-4">
                 <div class="grid grid-cols-4">
-                    <img src="/storage/profile_picture_tom_headifen.webp" class="w-full col-span-3" alt="Tom Headifen Profile Picture">
+                    <img :src="usePage().props.value.profilePicture" class="w-full col-span-3" alt="Tom Headifen Profile Picture">
                 </div>
             </div>
             <!-- Order last on smaller screens -->
             <div class="lg:order-last order-first col-span-2 static">
                 <div class="absolute bottom-0 right-0 hidden lg:block">
-                    <img height="300" width="300" src="/storage/toronto.png" class="z-0 opacity-10"/>
+                    <img height="300" width="300" :src="usePage().props.value.toronto" class="z-0 opacity-10"/>
                 </div>
                 <div class="z-10">
                     <p class="text-8xl font-extrabold text-gray-900 lg:mb-5">Tom Headifen</p>
@@ -63,6 +63,8 @@
 </template>
 
 <script setup>
+    import { usePage } from '@inertiajs/inertia-vue3'
+
     defineProps({
         stackOverFlowData: Object,
     })

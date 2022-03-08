@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -18,7 +19,12 @@ class HomeController extends Controller
             return $data->json();
         });
 
-        return Inertia::render('Home', ['stackOverFlowData' => $stackOverFlowData]);
+        return Inertia::render('Home', [
+            'stackOverFlowData' => $stackOverFlowData,
+            'profilePicture' => Storage::url('profile_picture_tom_headifen.webp'),
+            'talkVideo' => Storage::url('tom_talk.mp4'),
+            'toronto' => Storage::url('toronto.png'),
+        ]);
     }
 
     public function sendMessage(Request $request)
