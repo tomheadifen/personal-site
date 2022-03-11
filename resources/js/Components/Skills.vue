@@ -1,16 +1,16 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
     <main class="overflow-hidden relative mx-auto pl-4 pr-8 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-extrabold tracking-tight text-warm-gray-900 sm:text-5xl lg:text-5xl pb-10">What software do I work with?</h2>
+        <h2 class="text-4xl font-extrabold tracking-tight text-warm-gray-900 sm:text-5xl lg:text-5xl pb-5 lg:pb-10">What software do I work with?</h2>
         <div class="bg-white shadow overflow-hidden sm:rounded-md">
             <ul role="list" class="divide-y divide-gray-200">
                 <li v-for="skill in skills" :key="skill.id">
                     <div class="px-4 py-4 flex items-center sm:px-6">
                         <div class="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
-                            <div class="truncate">
+                            <div>
                                 <div class="flex text-sm">
                                     <p
-                                        class="font-medium text-indigo-600 truncate"
+                                        class="font-medium text-indigo-600"
                                     >{{ skill.title }}</p>
                                 </div>
                                 <div class="mt-2 flex">

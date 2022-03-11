@@ -19,7 +19,7 @@
             <section class="relative bg-white" aria-labelledby="contact-heading">
                 <div class="absolute w-full h-1/2 bg-warm-gray-50" aria-hidden="true" />
                 <!-- Decorative dot pattern -->
-                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="hidden lg:block relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <svg
                         class="absolute z-0 top-0 right-0 transform -translate-y-16 translate-x-1/2 sm:translate-x-1/4 md:-translate-y-24 lg:-translate-y-72"
                         width="404"
@@ -177,12 +177,12 @@
 
                             <!-- Contact form -->
                             <div class="sm:px-10 lg:col-span-4 xl:pr-12 xl:pl-12">
-                                <h3 class="text-lg font-medium text-warm-gray-900">Send me a message</h3>
+                                <h3 class="text-lg font-medium text-warm-gray-900 pl-2">Send me a message</h3>
                                 <form
                                     @submit.prevent="submitForm"
-                                    class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+                                    class="px-3 lg:px-0 mt-6 grid gap-y-6 lg:grid-cols-2 gap-x-8"
                                 >
-                                    <div>
+                                    <div class="col-span-2 lg:col-span-1">
                                         <label
                                             for="first-name"
                                             class="block text-sm font-medium text-warm-gray-900"
@@ -199,7 +199,7 @@
                                         </div>
                                         <div class="text-red-400 pt-3" v-if="form.errors.firstName">{{ form.errors.firstName }}</div>
                                     </div>
-                                    <div>
+                                    <div class="col-span-2 lg:col-span-1">
                                         <label
                                             for="last-name"
                                             class="block text-sm font-medium text-warm-gray-900"
@@ -216,7 +216,7 @@
                                         </div>
                                         <div class="text-red-400 pt-3" v-if="form.errors.lastName">{{ form.errors.lastName }}</div>
                                     </div>
-                                    <div>
+                                    <div class="col-span-2 lg:col-span-1">
                                         <label
                                             for="email"
                                             class="block text-sm font-medium text-warm-gray-900"
@@ -233,7 +233,7 @@
                                         </div>
                                         <div class="text-red-400 pt-3" v-if="form.errors.email">{{ form.errors.email }}</div>
                                     </div>
-                                    <div>
+                                    <div class="col-span-2 lg:col-span-1">
                                         <div class="flex justify-between">
                                             <label
                                                 for="phone"
@@ -241,7 +241,7 @@
                                             >Phone</label>
                                             <span
                                                 id="phone-optional"
-                                                class="text-sm text-warm-gray-500"
+                                                class="text-sm text-warm-gray-500 italic"
                                             >Optional</span>
                                         </div>
                                         <div class="mt-1">
@@ -257,7 +257,7 @@
                                         </div>
                                         <div class="text-red-400 pt-3" v-if="form.errors.phone">{{ form.errors.phone }}</div>
                                     </div>
-                                    <div class="sm:col-span-2">
+                                    <div class="col-span-2">
                                         <label
                                             for="subject"
                                             class="block text-sm font-medium text-warm-gray-900"
@@ -273,7 +273,7 @@
                                         </div>
                                         <div class="text-red-400 pt-3" v-if="form.errors.subject">{{ form.errors.subject }}</div>
                                     </div>
-                                    <div class="sm:col-span-2">
+                                    <div class="col-span-2">
                                         <div class="flex justify-between">
                                             <label
                                                 for="message"
@@ -300,7 +300,7 @@
                                     <vue-recaptcha class="col-span-2 flex justify-end" @verify="enableSubmitButton" @error="errorCaptcha" :sitekey="'6LeBuBweAAAAAKtS6OlH33B9PiH2RH6GV4lWtf-8'"></vue-recaptcha>
 
                                     <!-- Submit button -->
-                                    <div class="sm:col-span-2 sm:flex sm:justify-end">
+                                    <div class="col-span-2 flex justify-end">
                                         <button
                                             type="submit"
                                             class="disabled:bg-indigo-200 ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"

@@ -1,6 +1,6 @@
 <template>
 	<div class="min-h-screen bg-white">
-		<Disclosure as="nav" class="bg-white border-b border-gray-200">
+		<Disclosure as="nav" class="bg-white border-b border-gray-200 hidden md:block">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="flex justify-end h-16">
 
@@ -15,7 +15,7 @@
 			</div>
 		</Disclosure>
 
-		<div class="py-10">
+		<div class="py-3 md:py-10">
 			<main>
 				<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 					<slot />

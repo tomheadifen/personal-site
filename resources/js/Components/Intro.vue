@@ -2,19 +2,18 @@
     <section class="relative mx-auto pl-4 pr-8 sm:px-6 lg:px-8" aria-labelledby="contact-heading">
         <div id="about" class="grid grid-cols-4 mb-10">
             <div class="lg:col-span-2 col-span-4">
-                <div class="grid grid-cols-4">
-                    <img :src="usePage().props.value.profilePicture" class="w-full col-span-3" alt="Tom Headifen Profile Picture">
+                <div class="grid lg:grid-cols-4 justify-center">
+                    <img :src="usePage().props.value.profilePicture" class="col-span-4 lg:col-span-3 h-96 lg:h-auto max-w-full" alt="Tom Headifen Profile Picture">
                 </div>
             </div>
             <!-- Order last on smaller screens -->
-            <div class="lg:order-last order-first col-span-2 static">
+            <div class="lg:order-last order-first col-span-4 lg:col-span-2 static">
                 <div class="absolute bottom-0 right-0 hidden lg:block">
                     <img height="300" width="300" :src="usePage().props.value.toronto" class="z-0 opacity-10"/>
                 </div>
-                <div class="z-10">
-                    <p class="text-8xl font-extrabold text-gray-900 lg:mb-5">Tom Headifen</p>
-                    <!-- <p class="text-6xl text-gray-900 lg:mb-5">Software Developer</p> -->
-                    <p class="text-3xl text-gray-900 lg:mb-5">
+                <div class="z-10 pb-3">
+                    <p class="text-6xl lg:text-8xl font-extrabold text-gray-900 lg:mb-5">Tom Headifen</p>
+                    <p class="text-3xl text-gray-900 mb-5">
                         A Toronto based software developer    
                     </p>
                     <div class="pb-5">
