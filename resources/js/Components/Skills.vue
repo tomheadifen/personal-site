@@ -46,26 +46,31 @@ const skills = [
     },
     {
         id: 4,
+        title: 'HTML/CSS',
+        description: 'Languages used by the browsers to manage how a site looks',
+    },
+    {
+        id: 5,
         title: 'Vue',
         description: 'A javascript library to easily develop the front end',
     },
     {
-        id: 5,
+        id: 6,
         title: 'MySQL',
         description: 'A database language used to manage large amounts of data',
     },
     {
-        id: 6,
+        id: 7,
         title: 'Linux',
         description: 'Software used by many computers on the web',
     },
     {
-        id: 7,
+        id: 8,
         title: 'Amazon Web Services (AWS) and Google Firebase',
         description: 'A range of software that is commonly used on the web',
     },
     {
-        id: 8,
+        id: 9,
         title: 'Docker',
         description: 'Software to easily maintain and replicate server configuration',
     },

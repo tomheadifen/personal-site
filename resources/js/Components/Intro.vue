@@ -2,8 +2,12 @@
     <section class="relative mx-auto pl-4 pr-8 sm:px-6 lg:px-8" aria-labelledby="contact-heading">
         <div id="about" class="grid grid-cols-4 mb-10">
             <div class="lg:col-span-2 col-span-4">
-                <div class="grid lg:grid-cols-4 justify-center">
-                    <img :src="usePage().props.value.profilePicture" class="col-span-4 lg:col-span-3 h-96 lg:h-auto max-w-full" alt="Tom Headifen Profile Picture">
+                <div class="grid lg:grid-cols-4 LG:justify-center">
+                    <img 
+                        :src="usePage().props.value.profilePicture"
+                        class="col-span-4 lg:col-span-3 h-96 lg:h-auto lg:w-full"
+                        alt="Tom Headifen Profile Picture"
+                    >
                 </div>
             </div>
             <!-- Order last on smaller screens -->
@@ -14,7 +18,7 @@
                 <div class="z-10 pb-3">
                     <p class="text-6xl lg:text-8xl font-extrabold text-gray-900 lg:mb-5">Tom Headifen</p>
                     <p class="text-3xl text-gray-900 mb-5">
-                        A Toronto based software developer    
+                        A Toronto based full stack developer
                     </p>
                     <div class="pb-5">
                         <img class="inline mr-2" height="25" width="25" :src="stackOverFlowData.items[0].profile_image" />
